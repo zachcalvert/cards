@@ -6,6 +6,8 @@ import RefreshIcon from '@material-ui/icons/Refresh';
 
 import { Chat } from "./Chat/Chat";
 import { Deck } from "./Deck/Deck";
+import { LobbyCutCard } from './Deck/LobbyCutCard'
+import { LobbyDeck } from "./Deck/LobbyDeck";
 import { Opponent } from "./Opponent/Opponent";
 import { Player } from "./Player/Player";
 import { Scoreboard } from "./Scoreboard/Scoreboard";
@@ -175,7 +177,12 @@ export const Game = ()  => {
       </div>
   ) : (
     <div style={{ textAlign: 'center', height: '100%', width: '100%', display: 'inline-block' }}>
-      <img style={{ marginTop: '20px' }} src="logo.png" />
+      <div class="lobby-cut-card-container">
+        <LobbyCutCard />
+      </div>
+      <div class="lobby-deck-container">
+        <LobbyDeck />
+      </div>
       <form style={{ marginTop: '20px' }} onSubmit={event => handleJoin(event)}>
         <TextField
             id="name"

@@ -11,6 +11,27 @@ html, body {
   height: 100%;
 }
 
+.lobby-cut-card-container {
+  padding: 10px;
+  height: 90px;
+}
+
+.lobby-deck-container {
+  position:relative;
+  display: inline-flex;
+  height: 150px;
+}
+
+.lobby-card-container {
+  position:relative;
+  margin-top: auto;
+}
+
+.lobby-card {
+  width: 8vh!important;
+  height: 12vh!important;
+}
+
 .game {
   height: 95%;
   margin: 0 15px;

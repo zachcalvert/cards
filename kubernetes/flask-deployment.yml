@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-deployment
+  namespace: cribbage
 spec:
   replicas: 1
   selector:
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
         - name: flask
-          image: "gcr.io/optimum-pier-280005/github.com/zachcalvert/cards:backend-72943204af09346c0e84a8359e920833fdc41f58"
+          image: "gcr.io/optimum-pier-280005/github.com/zachcalvert/cribbage-server:c949c29193cd8515c114d93f25213b2f4f68a187"
           env:
             - name: "REDISHOST"
               value: "localhost"

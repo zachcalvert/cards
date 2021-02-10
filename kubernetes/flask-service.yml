@@ -2,14 +2,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: backend-service
+  namespace: cribbage
   labels:
-    app: cards-backend
+    app: cribbage-backend
   annotations:
-    beta.cloud.google.com/backend-config: '{"ports": {"5000":"cards-backendconfig"}}'
+    beta.cloud.google.com/backend-config: '{"ports": {"5000":"cribbage-backendconfig"}}'
 spec:
   type: ClusterIP
   selector:
-    app: cards-backend
+    app: cribbage-backend
   ports:
   - port: 5000
     targetPort: 5000
@@ -19,7 +20,8 @@ spec:
 apiVersion: cloud.google.com/v1beta1
 kind: BackendConfig
 metadata:
-  name: cards-backendconfig
+  name: cribbage-backendconfig
+  namespace: cribbage
 spec:
   timeoutSec: 7200
   connectionDraining:

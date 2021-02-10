@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
+  namespace: cribbage
 spec:
   replicas: 1
   selector:
@@ -14,6 +15,6 @@ spec:
     spec:
       containers:
         - name: react
-          image: "gcr.io/optimum-pier-280005/github.com/zachcalvert/cards-client:55ebbab97e640642dba47d418ba48dd6f79e5c9b"
+          image: "gcr.io/optimum-pier-280005/github.com/zachcalvert/cribbage-client:c949c29193cd8515c114d93f25213b2f4f68a187"
           ports:
             - containerPort: 80
